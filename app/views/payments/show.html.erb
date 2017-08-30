@@ -1,0 +1,3 @@
+<h1><%= @payment.client.nombre %> <%= @payment.client.apellido %></h1>
+<p><%= @payment.monto_payment %> - <%= @payment.fecha_payment %>  </p>
+<p><%= @payment.payment_type.monto_type %> - <%= @payment.payment_type.descripcion_type %>  <%= link_to "Eliminar", @payment , method: :delete %> </p>

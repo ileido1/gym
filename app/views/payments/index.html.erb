@@ -1,0 +1,16 @@
+<h1>Deudores</h1>
+<ul>
+<% @payment.each_with_index  do |payment| %>
+<% if payment.fecha_payment <= @timenow  %>
+<li>
+  <h3><%= link_to payment.client.nombre, payment.client %> <%= link_to payment.client.apellido, payment.client %></h3>
+  <label>Ultimo pago:</label> <%= payment.fecha_payment %> <%= payment.payment_type.descripcion_type %> <label>Monto:</label> <%= payment.monto_payment %>
+  <label>El cliente debe:</label> <% deuda = @timenow1.month - payment.fecha_payment.month %> <% if deuda == 1 %>
+    <%= deuda %> <label>Mes</label>
+    <% else %>
+    <%= deuda %> <label>Meses</label>
+  <% end %>
+</li>
+<% end %>
+<% end %>
+</ul>

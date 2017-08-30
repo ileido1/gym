@@ -1,0 +1,4 @@
+<% @clients.each do |client| %>
+<h1><%= link_to client.nombre, client %>  <%= link_to client.apellido, client %> </h1>
+<p><%= client.cedula %> - <%= link_to "Eliminar",client , method: :delete %></p>
+<% end %>

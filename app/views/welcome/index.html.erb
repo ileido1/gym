@@ -1,0 +1,8 @@
+<% if user_signed_in?  %>
+<h1 class="center-xs">Bienvenido <%= current_user.email %> </h1>
+<% end %>
+<h1>Ultimos pagos</h1>
+<% @payment.each do |payment| %>
+<h3><%= payment.client.nombre %> <%= payment.client.apellido %></h3>
+<%= payment.payment_type.descripcion_type %> - <%= payment.monto_payment %> - <%= payment.fecha_payment %>
+<% end %>

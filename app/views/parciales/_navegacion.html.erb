@@ -1,0 +1,27 @@
+<div class="">
+  <nav>
+    <ul class="no-list row center-xs middle-xs">
+      <li class="col-md">
+        <%= link_to "Inicio", root_path %>
+       </li>
+      <li class="col-md">
+      <%= link_to "Nuevos Clientes", new_client_path %>
+      </li>
+      <li class="col-md">
+      <%= link_to "Clientes", clients_path %>
+      </li>
+      <li class="col-md">
+      <%= link_to "Deudores", payments_path %>
+      </li>
+      <li class="col-md">
+      <%= link_to "Tipos de pagos", payment_types_path %>
+      </li>
+        <% if user_signed_in? %>
+          <li class="col-md">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+          </li>
+        <% end %>
+
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gym</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  </head>
+  <p class="notice"> <%= notice %></p>
+  <p class="alert"> <%= alert %></p>
+  <body>
+    <%= render "/parciales/navegacion" %>
+    <%= yield %>
+  </body>
+</html>

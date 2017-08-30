@@ -1,0 +1,20 @@
+<%= form_for ([@Clients, @payments]) do |f| %>
+<% @payments.errors.full_messages.each do |message| %>
+<div class="">
+  <%= message %>
+<% end %>
+  </div>
+  <div class="">
+    <div class="">
+    <label>Tipo de pago:</label>
+      <%= collection_select(:payment,:payment_type_id,@type,:id,:descripcion_type, {prompt: "Select a category"}) %>
+    </div>
+  <div class="">
+      <label>Fecha de pago:</label>
+    <%= f.date_field :fecha_payment %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Guardar" %>
+  </div>
+<% end %>

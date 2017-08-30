@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_mensualidad: 1
+  id_inscripcion: 1
+  id_cliente: 1
+  monto_payment: 1
+  fecha_payment: 2017-08-18
+
+two:
+  id_mensualidad: 1
+  id_inscripcion: 1
+  id_cliente: 1
+  monto_payment: 1
+  fecha_payment: 2017-08-18
