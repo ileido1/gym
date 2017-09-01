@@ -1,16 +1,45 @@
-<h1>Deudores</h1>
-<ul>
-<% @payment.each_with_index  do |payment| %>
-<% if payment.fecha_payment <= @timenow  %>
-<li>
-  <h3><%= link_to payment.client.nombre, payment.client %> <%= link_to payment.client.apellido, payment.client %></h3>
-  <label>Ultimo pago:</label> <%= payment.fecha_payment %> <%= payment.payment_type.descripcion_type %> <label>Monto:</label> <%= payment.monto_payment %>
-  <label>El cliente debe:</label> <% deuda = @timenow1.month - payment.fecha_payment.month %> <% if deuda == 1 %>
-    <%= deuda %> <label>Mes</label>
-    <% else %>
-    <%= deuda %> <label>Meses</label>
-  <% end %>
-</li>
-<% end %>
-<% end %>
-</ul>
+				<div class="container center-box">
+          <h1 class="text-center">Deudores</h1>
+					<table class="table table-striped table-hover ">
+						<thead>
+							<tr>
+								<th>Cliente</th>
+                <th>Cédula</th>
+								<th>Tipo de pago</th>
+								<th>Monto</th>
+                <th>Fecha</th>
+                <th>Deuda</th>
+							</tr>
+						</thead>
+
+						<tbody>
+              <% @payment.each_with_index  do |payment| %>
+              <% if payment.fecha_payment <= @timenow  %>
+                <tr>
+                  <td><p class="nombre-cliente"><%= link_to payment.client.nombre, payment.client %> <%= link_to payment.client.apellido, payment.client %></p>
+                  </td>
+                  <td><p class="detalles-cliente"><%= payment.client.cedula %></p>
+                  </td>
+                  <td>
+                    <p class="detalles-cliente"> <%= payment.payment_type.descripcion_type %></p>
+                  </td>
+                  <td>
+                    <p class="detalles-cliente"> <%= payment.monto_payment %> </p>
+                  </td>
+                  <td>
+                    <p class="detalles-cliente"> <%= payment.fecha_payment %> </p>
+                  </td>
+                  <td>
+                    <p class="detalles-cliente"> <% deuda = @timenow1.month - payment.fecha_payment.month %> <% if deuda == 1 %>
+                      <%= deuda %> Mes
+                      <% else %>
+                      <%= deuda %> Meses 
+                    <% end %></p>
+                  </td>
+								</tr>
+                <% end %>
+                <% end %>
+						</tbody>
+					</table>
+
+				</div>

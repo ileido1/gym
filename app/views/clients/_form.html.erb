@@ -1,35 +1,39 @@
+<div class="nuevo">
 <%= form_for (@client) do |f| %>
 <% @client.errors.full_messages.each do |message| %>
 <div class="">
   <%= message %>
 <% end %>
   </div>
-  <div class="">
-    Foto del cliente: <%= f.file_field :foto %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.file_field :foto, class: " anchura" %>
   </div>
-  <div class="">
-    <%= f.text_field :nombre, placeholder: "Nombre" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :nombre, placeholder: "Nombre", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.text_field :apellido, placeholder: "Apellido" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :apellido, placeholder: "Apellido", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.text_field :cedula, placeholder: "Cedula" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :cedula, placeholder: "Cedula", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.email_field :email, placeholder: "Email" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.email_field :email, placeholder: "Email", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.telephone_field :telefono, placeholder: "Telefono" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.telephone_field :telefono, placeholder: "Telefono", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.label :Fecha_de_nacimiento%>
-    <%= f.date_field :nacimiento %>
+  <div class="col-sm-6 col-md-6 col-xs-6 anchura2">
+    <%= f.label :Fecha_de_nacimiento, class: "label-control anchura"%>
   </div>
-  <div class="">
-    <%= f.text_field :direccion, placeholder: "Direccion" %>
+  <div class="col-sm-6 col-md-6 col-xs-6 ">
+    <%= f.date_field :nacimiento , class: "form-control anchura3  padding_left"%>
   </div>
-  <div class="">
-    <%= f.submit "Guardar" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :direccion, placeholder: "Direccion", class: "form-control anchura" %>
+  </div>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.submit "Guardar",class: "btn btn-success" %>
   </div>
 <% end %>
+</div>

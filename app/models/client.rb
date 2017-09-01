@@ -13,6 +13,6 @@ class Client < ApplicationRecord
   has_attached_file :foto,:styles => {
       :thumb => "100x100#",
       :small  => "150x150>",
-      :medium => "200x200" }
+      :medium => "300x300" }
   validates_attachment_content_type :foto, content_type: /\Aimage\/.*\z/
 end

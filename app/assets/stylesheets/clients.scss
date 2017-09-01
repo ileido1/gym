@@ -1,0 +1,33 @@
+.thumbnail > img{
+
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+
+}
+.anchura{
+  margin-bottom: 8px;
+}
+.padding_left{
+padding-left: 0;
+}
+.anchura2{
+  width:160px;
+  margin-top:  10px !important;
+}
+.anchura3{
+
+  margin-bottom: 8px;
+}
+.centrado{
+  margin: 0 auto;
+}
+.nuevosc{
+  background-color: white;
+  height: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 100px;
+}

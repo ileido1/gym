@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-md-3 col-xs-12">
+  <div class="thumbnail ">
+    <%= image_tag client.foto.url%>
+    <div class="caption">
+    <h2 class="text-capitalize">  <%= client.nombre %> <%= client.apellido%> </h2>
+    <p> Cédula: <%= client.cedula %></p>
+    <button type="button" class="btn btn-info"><%= link_to "Ver perfil", client %></button>
+
+      </div>
+    </div>
+</div>

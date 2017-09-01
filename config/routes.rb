@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/create'
+
   devise_for :users
   resources :payment_types
   resources :clients do

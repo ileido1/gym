@@ -1,4 +1,28 @@
-<% @clients.each do |client| %>
-<h1><%= link_to client.nombre, client %>  <%= link_to client.apellido, client %> </h1>
-<p><%= client.cedula %> - <%= link_to "Eliminar",client , method: :delete %></p>
-<% end %>
+<div class="container-fluid">
+<div  class="row", id="resultados">
+
+</div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-xs-6 anchura">
+        <%= form_tag "/search/create", method: :get, remote: true, id: "search_f" do %>
+          <%= text_field_tag(:search,params[:search],placeholder: "Buscador de clientes", class: "form-control"  ) %>
+          </div>
+            <div class="col-sm-6 col-md-6 col-xs-6 padding_left">
+            <%= content_tag :button, type: :submit, class: "btn btn-default" do %>
+              Buscar
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+    <%= render @clients %>
+  </div>
+</div>
