@@ -1,7 +1,7 @@
 class Payment < ApplicationRecord
   belongs_to :client
   belongs_to :payment_type
-  scope :ultimos, -> { group(:client_id).order("fecha_payment ASC")   }
+  scope :ultimos, -> { order("fecha_payment ASC")   }
   after_create :update_monto
   #after_create :send_mails
 
