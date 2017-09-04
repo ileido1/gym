@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
   before_action :set_client, except:[:index]
 
  def index
-   @payment = Payment.ultimos
+   @payment = Payment.select("DISTINCT ON (client_id) * ").order("client_id, fecha_payment ASC")
    @timenow = Date.today - 1.month
    @timenow1 = Date.today
  end
