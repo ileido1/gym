@@ -1,7 +1,8 @@
 class Payment < ApplicationRecord
   belongs_to :client
   belongs_to :payment_type
-  scope :ultimos, -> { order("fecha_payment ASC")   }
+  scope :ultimos, -> { ("DISTINCT ON (client_id) * ").order("client_id, fecha_payment ASC") }
+  #ultimos sqlite group(client_id).order("fecha_payment ASC")
   after_create :update_monto
   #after_create :send_mails
 
