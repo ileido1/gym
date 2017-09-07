@@ -1,20 +1,21 @@
-<%= form_for ([@Clients, @payments]) do |f| %>
-<% @payments.errors.full_messages.each do |message| %>
-<div class="">
-  <%= message %>
-<% end %>
-  </div>
-  <div class="">
-    <div class="">
-    <label>Tipo de pago:</label>
-      <%= collection_select(:payment,:payment_type_id,@type,:id,:descripcion_type, {prompt: "Select a category"}) %>
+  <%= form_for ([@Clients, @payments]) do |f| %>
+  <% @payments.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger">
+    <%= message %>
+  <% end %>
     </div>
-  <div class="">
-      <label>Fecha de pago:</label>
-    <%= f.date_field :fecha_payment %>
-  </div>
-
-  <div class="">
-    <%= f.submit "Guardar" %>
-  </div>
-<% end %>
+    <div class="anchoC">
+    <div class="col-sm-12 col-md-12 col-xs-12 anchura">
+      <%= collection_select(:payment,:payment_type_id,@type,:id,:descripcion_type, {prompt: "Seleccione un tipo de pago"},class: "form-control input-sm") %>
+    </div>
+        <div class="col-sm-4 col-md-4 col-xs-4 margin-top">
+          <label>Fecha de pago:</label>
+        </div>
+    <div class="col-sm-8 col-md-8 col-xs-8 ">
+      <%= f.date_field :fecha_payment, class:"form-control input-sm" %>
+    </div>
+    <div class="col-sm-12 col-md-12 col-xs-12">
+      <%= f.submit "Guardar" , class:"btn btn-success" %>
+    </div>
+  <% end %>
+    </div>

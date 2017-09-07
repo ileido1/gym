@@ -13,9 +13,13 @@
     <% if user_signed_in? %>
     <%= render "/parciales/navegacion" %>
     <% end %>
-    <div style="<%= "display: none;" if notice.nil? and alert.nil? %>">
-      <p class="notice"> <%= notice %></p>
-      <p class="alert"> <%= alert %></p>
+    <div class="container">
+      <div class="alert alert-success ", style="<%= "display: none;" if notice.nil? %>">
+        <p class="notice"> <%= notice %></p>
+      </div>
+      <div class="alert alert-danger ", style="<%= "display: none;" if alert.nil? %>">
+        <p class="alert"> <%= alert %></p>
+      </div>
     </div>
     <%= yield %>
   </body>

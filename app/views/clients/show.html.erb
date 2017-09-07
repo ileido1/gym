@@ -1,35 +1,40 @@
-<div class="">
-  <%= image_tag @Clients.foto.url(:medium ) %>
-</div>
-<div class="">
-  <h1><%= @Clients.nombre %>  <%= @Clients.apellido %> </h1>
-</div>
-<div class="">
-  <p> Cedula: <%= @Clients.cedula %></p>
-</div>
-<div class="">
-  <p> Email: <%= @Clients.email %></p>
-</div>
-<div class="">
-  <p> Telefono: <%= @Clients.telefono %></p>
-</div>
-<div class="">
-  <p> Direccion: <%= @Clients.direccion %></p>
-</div>
-<div class="">
-  <p> Fecha de nacimiento: <%= @Clients.nacimiento %></p>
-</div>
-<div class="">
-  <%= link_to "Editar", edit_client_path() %>
-</div>
-<div class="">
-  <h3>Pagos</h3>
-  <%= render "payments/form" %>
-  <ul>
-    <% @Clients.payments.each do |payment| %>
-    <h3>Historial de pagos</h3>
-    <li> Descripcion: <%= payment.monto_payment %> - <%= payment.payment_type.descripcion_type %>  - <%=  payment.fecha_payment %></li>
-    <% end %>
-  </ul>
+<div class="container-fluid">
+  <div class="row">
 
+
+    <div class="col-sm-12 col-md-3 col-xs-12">
+      <div class="thumbnail profile ">
+        <%= image_tag @Clients.foto.url %>
+        <h1><%= @Clients.nombre %>  <%= @Clients.apellido %> </h1>
+        <p> Cedula: <%= @Clients.cedula %></p>
+        <p> Email: <%= @Clients.email %></p>
+        <p> Telefono: <%= @Clients.telefono %></p>
+        <p> Direccion: <%= @Clients.direccion %></p>
+        <p> Fecha de nacimiento: <%= @Clients.nacimiento %></p>
+        <button type="button" class="btn btn-warning">  <%= link_to "Editar", edit_client_path() %></button>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-md-4 col-xs-12 cuadrito">
+          <div class="container-fluid">
+            <div class="row">
+              <%= render "payments/form" %>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-xs-12 cuadrito">
+                        <p>Historial de pagos</p>
+                        <ul>
+                          <% @Clients.payments.each do |payment| %>
+                            <li> Descripcion: <%= payment.monto_payment %> - <%= payment.payment_type.descripcion_type %>  - <%=  payment.fecha_payment %></li>
+                          <% end %>
+                        </ul>
+
+            </div>
+    </div>
+
+
+
+   </div>
   </div>
