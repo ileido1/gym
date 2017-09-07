@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-  @clients =  Client.all.limit(12)
+  @clients =  Client.all.limit(8)
   end
 
   def show

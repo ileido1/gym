@@ -16,25 +16,45 @@
     </div>
 
 
-    <div class="col-sm-12 col-md-4 col-xs-12 cuadrito">
+    <div class="col-sm-12 col-md-3 col-xs-12">
+        <div class="cuadrito">
           <div class="container-fluid">
             <div class="row">
               <%= render "payments/form" %>
             </div>
           </div>
-
-          <div class="col-sm-12 col-md-4 col-xs-12 cuadrito">
-                        <p>Historial de pagos</p>
-                        <ul>
-                          <% @Clients.payments.each do |payment| %>
-                            <li> Descripcion: <%= payment.monto_payment %> - <%= payment.payment_type.descripcion_type %>  - <%=  payment.fecha_payment %></li>
-                          <% end %>
-                        </ul>
-
-            </div>
+          </div>
     </div>
 
+    <div class="col-sm-12 col-md-6 col-xs-12">
+        <div class="cuadrito">
+                  <p class="text-center titulo Ncliente">Historial de pagos</p>
+                    <div class="center-box padding">
+                      <table class="table table-responsive table-hover ">
+                        <thead>
+                          <tr>
+                            <th>Tipo de pago</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                          </tr>
+                        </thead>
 
-
+                        <tbody>
+                        <% @Clients.payments.order("fecha_payment DESC").each do |payment| %>
+                            <tr>
+                              <td><p class="detalles-cliente"><%= payment.payment_type.descripcion_type %></p>
+                              </td>
+                              <td><p class="detalles-cliente"><%= payment.monto_payment %></p>
+                              </td>
+                              <td>
+                                <p class="detalles-cliente"> <%=  payment.fecha_payment %></p>
+                              </td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+      </div>
+    </div>
    </div>
   </div>

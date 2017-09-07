@@ -1,16 +1,19 @@
 <%= form_for ([@types]) do |f| %>
 <% @types.errors.full_messages.each do |message| %>
-<div class="">
+<div class=" alert alert-danger">
   <%= message %>
 <% end %>
   </div>
-  <div class="">
-    <%= f.text_field :descripcion_type, placeholder: "Descripción" %>
+<div class="row nuevosp">
+    <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :descripcion_type, placeholder: "Descripción", class: "form-control anchura" %>
   </div>
-  <div class="">
-    <%= f.text_field :monto_type, placeholder: "Monto" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.text_field :monto_type, placeholder: "Monto" , class: "form-control anchura"%>
   </div>
-  <div class="">
-    <%= f.submit "Guardar" %>
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <%= f.submit "Guardar", class: "btn btn-success" %>
   </div>
+</div>
+
 <% end %>

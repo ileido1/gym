@@ -1,7 +1,7 @@
 <div class="nuevo">
-<%= form_for (@client),remote: true, html:{id: "client-form", :"data-type" => "json"} do |f| %>
+<%= form_for (@client) do |f| %>
 <% @client.errors.full_messages.each do |message| %>
-<div class="">
+<div class="alert alert-danger">
   <%= message %>
 <% end %>
   </div>
@@ -23,10 +23,10 @@
   <div class="col-sm-12 col-md-12 col-xs-12">
     <%= f.telephone_field :telefono, placeholder: "Telefono", class: "form-control anchura" %>
   </div>
-  <div class="col-sm-3 col-md-3 col-xs-3">
+  <div class="col-sm-4 col-md-3 col-xs-4">
     <%= f.label :Fecha_de_nacimiento, class: "label-control margin-top"%>
   </div>
-  <div class="col-sm-9 col-md-9 col-xs-9 ">
+  <div class="col-sm-4 col-md-9 col-xs-8 ">
     <%= f.date_field :nacimiento , class: "form-control anchura"%>
   </div>
   <div class="col-sm-12 col-md-12 col-xs-12">

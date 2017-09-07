@@ -1,3 +1,23 @@
-<% @type.each do |type| %>
-<h1><%= type.descripcion_type %>  <%= type.monto_type %> </h1>
-<% end %>
+<div class="container-fluid">
+<div class="container center-box">
+<table class="table table-responsive table-hover">
+  <thead>
+    <tr>
+      <th>Pagos Creados</th>
+      <th>Monto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @type.each do |type| %>
+      <tr>
+        <td><p class="nombre-cliente"><%= type.descripcion_type %></p>
+        </td>
+        <td><p class="detalles-cliente"><%= type.monto_type %></p>
+        </td>
+        <td><p class="detalles-cliente"><%= link_to "Editar", edit_payment_type_path(type) %></p>
+        </td>
+      <% end %>
+  </tbody>
+</table>
+</div>
+</div>

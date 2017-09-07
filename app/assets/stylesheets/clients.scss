@@ -5,11 +5,19 @@
   height: 200px;
 
 }
+.titulo{
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+label{
+  font-weight: normal;
+}
 .anchoC{
   max-width: 400px;
   margin: 0 auto;
   padding-top: 10px;
 }
+
 .cuadrito{
     display: block;
     padding: 4px;
@@ -21,6 +29,9 @@
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
+}
+.padding{
+  padding: 10px;
 }
 .anchura{
   margin-bottom: 8px;
@@ -42,7 +53,6 @@ padding-left: 0;
 }
 .profile{
   max-width: 300px;
-
 }
 .nuevosc{
   background-color: white;
