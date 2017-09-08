@@ -30,29 +30,31 @@
         <div class="cuadrito">
                   <p class="text-center titulo Ncliente">Historial de pagos</p>
                     <div class="center-box padding">
-                      <table class="table table-responsive table-hover ">
-                        <thead>
-                          <tr>
-                            <th>Tipo de pago</th>
-                            <th>Monto</th>
-                            <th>Fecha</th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-                        <% @Clients.payments.order("fecha_payment DESC").each do |payment| %>
+                      <div class="table-responsive">
+                        <table class="table  table-hover ">
+                          <thead>
                             <tr>
-                              <td><p class="detalles-cliente"><%= payment.payment_type.descripcion_type %></p>
-                              </td>
-                              <td><p class="detalles-cliente"><%= payment.monto_payment %></p>
-                              </td>
-                              <td>
-                                <p class="detalles-cliente"> <%=  payment.fecha_payment.strftime("%d-%m-%Y") %></p>
-                              </td>
+                              <th>Tipo de pago</th>
+                              <th>Monto</th>
+                              <th>Fecha</th>
                             </tr>
-                            <% end %>
-                        </tbody>
-                      </table>
+                          </thead>
+
+                          <tbody>
+                          <% @Clients.payments.order("fecha_payment DESC").each do |payment| %>
+                              <tr>
+                                <td><p class="detalles-cliente"><%= payment.payment_type.descripcion_type %></p>
+                                </td>
+                                <td><p class="detalles-cliente"><%= payment.monto_payment %></p>
+                                </td>
+                                <td>
+                                  <p class="detalles-cliente"> <%=  payment.fecha_payment.strftime("%d-%m-%Y") %></p>
+                                </td>
+                              </tr>
+                              <% end %>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
       </div>
     </div>
