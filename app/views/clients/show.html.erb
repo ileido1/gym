@@ -47,7 +47,7 @@
                               <td><p class="detalles-cliente"><%= payment.monto_payment %></p>
                               </td>
                               <td>
-                                <p class="detalles-cliente"> <%=  payment.fecha_payment %></p>
+                                <p class="detalles-cliente"> <%=  payment.fecha_payment.strftime("%d-%m-%Y") %></p>
                               </td>
                             </tr>
                             <% end %>
