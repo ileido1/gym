@@ -22,7 +22,6 @@ class PaymentsController < ApplicationController
     respond_to do |format|
           if @payments.save
             format.html { redirect_to @payments.client, notice: 'El pago ha sido creado correctamente.' }
-            format.json { render :show, status: :created, location: @payments }
             format.json { render :show, status: :created, location: @payments.client }
           else
             format.html { render :new }
