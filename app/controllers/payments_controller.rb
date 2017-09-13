@@ -23,6 +23,7 @@ class PaymentsController < ApplicationController
           if @payments.save
             format.html { redirect_to @payments.client, notice: 'El pago ha sido creado correctamente.' }
             format.json { render :show, status: :created, location: @payments.client }
+            format.js
           else
             format.html { render :new }
             format.json { render json: @payments.errors, status: :unprocessable_entity }

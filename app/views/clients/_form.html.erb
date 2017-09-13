@@ -1,10 +1,10 @@
 <div class="nuevo">
-<%= form_for (@client) do |f| %>
-<% @client.errors.full_messages.each do |message| %>
-<div class="alert alert-danger">
-  <%= message %>
-<% end %>
-  </div>
+    <%= form_for (@client) do |f| %>
+    <% @client.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger">
+        <%= message %>
+    </div>
+  <% end %>
   <div class="col-sm-12 col-md-12 col-xs-12">
     <%= f.file_field :foto, class: " anchura" %>
   </div>
