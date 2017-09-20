@@ -1,4 +1,7 @@
 class PaymentTypesController < ApplicationController
+  before_action :authenticate_user!
+
+
   def index
     @type = PaymentType.all
   end
@@ -10,7 +13,7 @@ class PaymentTypesController < ApplicationController
 
     respond_to do |format|
           if @types.save
-            format.html { redirect_to @types, notice: 'El tipo de pago was successfully created.' }
+            format.html { redirect_to payment_types_path, notice: 'El tipo de pago was successfully created.' }
             format.json { render :show, status: :created, location: @types }
             format.json { render :show, status: :created, location: @types }
           else
@@ -19,16 +22,18 @@ class PaymentTypesController < ApplicationController
           end
         end
 end
+
 def show
   @types = PaymentType.find(params[:id])
 end
 def edit
   @types = PaymentType.find(params[:id])
 end
+
 def update
   @types = PaymentType.find(params[:id])
   if @types.update(payment_types_params)
-   redirect_to @types
+   redirect_to payment_types_path
  else
    render :edit
 end

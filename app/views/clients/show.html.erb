@@ -12,6 +12,11 @@
         <p> Direccion: <%= @Clients.direccion %></p>
         <p> Fecha de nacimiento: <%= @Clients.nacimiento %></p>
         <button type="button" class="btn btn-warning">  <%= link_to "Editar", edit_client_path() %></button>
+        <% if @Clients.may_Inactivado? %>
+        <button type="button" class="btn btn-danger"><%= link_to "Inactivar", "/clients/#{@Clients.id}/Inactivado", method: :put, data: { confirm: '¿Estás seguro?' } %></button>
+        <% else %>
+        <button type="button" class="btn btn-danger"><%= link_to "Activar", "/clients/#{@Clients.id}/Activar", method: :put, data: { confirm: '¿Estás seguro?' } %></button>
+        <% end %>
       </div>
     </div>
 

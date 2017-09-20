@@ -15,7 +15,7 @@
 
 							<tbody>
 	              <% @payment.each_with_index  do |payment| %>
-	              <% if payment.fecha_payment <= @timenow  %>
+	              <% if payment.fecha_payment <= @timenow and payment.client.state == "Activo" %>
 	                <tr>
 	                  <td><p class="nombre-cliente"><%= link_to payment.client.nombre, payment.client %> <%= link_to payment.client.apellido, payment.client %></p>
 	                  </td>
@@ -42,7 +42,7 @@
 	                <% end %>
 							</tbody>
 						</table>
-	
+
 					</div>
 
 				</div>

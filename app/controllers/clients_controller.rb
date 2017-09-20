@@ -49,6 +49,18 @@ class ClientsController < ApplicationController
   end
 
 
+  def Inactivado
+  @client = Client.find(params[:id])
+  @client.Inactivado!
+  redirect_to @client
+  end
+
+  def Activar
+  @client = Client.find(params[:id])
+  @client.Activado!
+  redirect_to @client
+  end
+
   private
 
   def client_params

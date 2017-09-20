@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828181351) do
+ActiveRecord::Schema.define(version: 20170917210547) do
 
   create_table "clients", force: :cascade do |t|
     t.string "nombre"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170828181351) do
     t.integer "telefono", limit: 8
     t.text "direccion"
     t.date "nacimiento"
+    t.string "state", default: "Activo"
   end
 
   create_table "payment_types", force: :cascade do |t|

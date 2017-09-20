@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+  include AASM
   has_many :payments
   has_many :payment_types, :through => :payments
 
@@ -15,4 +16,18 @@ class Client < ApplicationRecord
       :small  => "150x150>",
       :medium => "300x300" }
   validates_attachment_content_type :foto, content_type: /\Aimage\/.*\z/
+
+  aasm column: "state" do
+    state :Activo
+    state :Inactivo
+
+    event :Activado do
+      transitions from: :Inactivo, to: :Activo
+    end
+
+    event :Inactivado do
+      transitions from: :Activo, to: :Inactivo
+    end
+
+  end
 end

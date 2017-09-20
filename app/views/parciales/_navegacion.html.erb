@@ -39,6 +39,7 @@
           <% if user_signed_in? %>
               <li class="">
                 <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+                <%= link_to "Admin panel", rails_admin_path %>
               </li>
             <% end %>
           </ul>
