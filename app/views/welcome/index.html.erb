@@ -14,7 +14,6 @@
 
 							<tbody>
 	              <% @payment.each do |payment| %>
-									<% if payment.client.state == "Activo" %>
 									<tr>
 									 <td><p class="nombre-cliente"><%= payment.client.nombre %> <%= payment.client.apellido %></p>
 									 </td>
@@ -30,7 +29,6 @@
 										 <p class="detalles-cliente"><%= payment.fecha_payment.strftime("%d-%m-%Y") %></p>
 									 </td>
 								 </tr>
-									<% end %>
 	                <% end %>
 							</tbody>
 						</table>
